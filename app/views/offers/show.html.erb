@@ -1,0 +1,61 @@
+<div class="ui stackable two column grid container">
+  <div class="column">
+    <h1>Prisförslag för bohagsflytt</h1>
+  </div>
+  <div class="row">
+    <div class="column">
+      <p>
+        Offertnummer: <%= @offer.id %>
+      </p>
+
+      <p>
+        <%= @offer.name %><br />
+        <%= @offer.email %>
+      </p>
+
+      <p>
+        <strong>Från:</strong>
+        <%= @offer.from_address %><br />
+        <strong>Till:</strong>
+        <%= @offer.to_address %> <br />
+        <strong>Avstånd:</strong>
+        <%= @offer.distance %> km
+      </p>
+
+      <p>
+        <strong>Bostadens yta:</strong>
+        <%= @offer.living_area %> kvm<br />
+        <strong>Vind/källare:</strong>
+        <%= @offer.storage_area %> kvm
+      </p>
+
+      <h2>Övrigt</h2>
+      <p>
+        <strong>Pianoflytt:</strong>
+        <%= human_boolean(@offer.piano) %> <br />
+        <strong>Packhjälp:</strong>
+        <%= human_boolean(@offer.help) %>
+      </p>
+    </div>
+    <div class="column">
+      <p class="priceinfo">
+        <strong>Uppskattad pris:</strong><br />
+        <i class="price"><%= number_with_delimiter(@offer.price, delimiter: " ") %> inkl moms</i>
+      </p>
+      <p>
+        Vi sparar ditt prisförslag i 90 dagar.<br />
+        För att se prisförslaget igen, besök:<br/>
+        <a href="http://moveit.se/offert/<%=@offer.id%>">http://moveit.se/offert/<%=@offer.id%></a>
+      </p>
+      <p>
+        Om du har frågor, kontakta flytt@moveit.se
+      </p>
+    </div>
+  </div>
+  <div class="ui section divider"></div>
+  <div class="row">
+    <div class="column">
+      <%= link_to 'Tillbaka', root_path, class: 'ui blue button' %>
+    </div>
+  </div>
+</div>
