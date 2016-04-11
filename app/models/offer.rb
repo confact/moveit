@@ -9,7 +9,6 @@ class Offer < ActiveRecord::Base
   before_save :calculate_price
 
   def calculate_price
-    calculate = PriceCalculate.new(living_area, storage_area, distance, piano)
-    self.price = calculate.get_price
+    self.price = PriceCalculate.get_price(living_area, storage_area, distance, piano)
   end
 end
