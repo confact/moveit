@@ -9,6 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'packer_virtualbox-iso_virtualbox'
   config.vm.box_url = 'https://github.com/jose-lpa/packer-debian_7.6.0/releases/download/1.0/packer_virtualbox-iso_virtualbox.box'
   config.vm.provision 'shell', path: 'script/vagrant.sh'
+  config.vm.hostname = 'moveit'
 
   # Configurate the virtual machine to use 2GB of RAM
   config.vm.provider :virtualbox do |vb|
