@@ -18,3 +18,4 @@
 *.keep
 /.vagrant
 /coverage
+.env

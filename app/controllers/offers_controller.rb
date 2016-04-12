@@ -1,12 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :destroy]
 
-  # GET /offers
-  # GET /offers.json
-  def index
-    @offers = Offer.all
-  end
-
   # GET /offers/1
   # GET /offers/1.json
   def show
@@ -35,16 +29,6 @@ class OffersController < ApplicationController
         format.html { render :new }
         format.json { render json: @offer.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /offers/1
-  # DELETE /offers/1.json
-  def destroy
-    @offer.destroy
-    respond_to do |format|
-      format.html { redirect_to offers_url, notice: 'Offer was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
