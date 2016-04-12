@@ -35,14 +35,6 @@ RSpec.describe OffersController, type: :controller do
   # OffersController. Be sure to keep this updated too.
   let(:valid_session) { { client: '12412451251255tqw4r23qw5r2345' } }
 
-  describe 'GET #index' do
-    it 'assigns all offers as @offers' do
-      offer = create(:offer)
-      get :index, {}, valid_session
-      expect(assigns(:offers)).to eq([offer])
-    end
-  end
-
   describe 'GET #show' do
     it 'assigns the requested offer as @offer' do
       offer = create(:offer)
@@ -89,23 +81,6 @@ RSpec.describe OffersController, type: :controller do
         post :create, { offer: invalid_attributes }, valid_session
         expect(response).to render_template('new')
       end
-    end
-  end
-
-  describe 'DELETE #destroy' do
-    it 'destroys the requested offer' do
-      offer = create(:offer)
-      expect do
-        request.cookies['client'] = '12412451251255tqw4r23qw5r2345'
-        delete :destroy, { id: offer.to_param }, valid_session
-      end.to change(Offer, :count).by(-1)
-    end
-
-    it 'redirects to the offers list' do
-      offer = create(:offer)
-      request.cookies['client'] = '12412451251255tqw4r23qw5r2345'
-      delete :destroy, { id: offer.to_param }, valid_session
-      expect(response).to redirect_to(offers_url)
     end
   end
 end
