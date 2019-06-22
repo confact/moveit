@@ -11,25 +11,25 @@
     </div>
   <% end %>
 
-  <%= f.input :name, label: 'Namn' %>
+  <%= f.input :name %>
 
   <%= f.input :email, placeholder: 'user@domain.com' %>
 
-  <%= f.input :from_address, label: 'Från Adress' %>
+  <%= f.input :from_address %>
 
-  <%= f.input :to_address, label: 'Till Adress' %>
+  <%= f.input :to_address %>
 
-  <%= f.input :distance, label: 'Avstånd' %>
+  <%= f.input :distance %>
 
-  <%= f.input :living_area, label: 'Bostadsstorlek' %>
+  <%= f.input :living_area %>
 
-  <%= f.input :storage_area, label: 'Vind/Källare storlek' %>
+  <%= f.input :storage_area %>
 
   <%= f.input :piano, label_html: { class: 'ui checkbox' } %>
 
-  <%= f.input :help, label: 'Packhjälp', label_html: { class: 'ui checkbox' } %>
+  <%= f.input :help, label_html: { class: 'ui checkbox' } %>
 
   <div class="actions">
-    <%= f.button :submit, "Skicka" %> <%= link_to 'Tillbaka', root_path, class: 'ui red button' %>
+    <%= f.button :submit, "Send" %> <%= link_to 'Back', root_path, class: 'ui red button' %>
   </div>
 <% end %>
