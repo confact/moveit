@@ -1,11 +1,11 @@
 <div class="ui stackable two column grid container">
   <div class="column">
-    <h1>Prisförslag för bohagsflytt</h1>
+    <h1>Price proposals for furniture moving</h1>
   </div>
   <div class="row">
     <div class="column">
       <p>
-        Offertnummer: <%= @offer.id %>
+        Proposal number: <%= @offer.id %>
       </p>
 
       <p>
@@ -14,48 +14,48 @@
       </p>
 
       <p>
-        <strong>Från:</strong>
+        <strong>From:</strong>
         <%= @offer.from_address %><br />
-        <strong>Till:</strong>
+        <strong>To:</strong>
         <%= @offer.to_address %> <br />
-        <strong>Avstånd:</strong>
+        <strong>Distance:</strong>
         <%= @offer.distance %> km
       </p>
 
       <p>
-        <strong>Bostadens yta:</strong>
+        <strong>House's area:</strong>
         <%= @offer.living_area %> kvm<br />
-        <strong>Vind/källare:</strong>
+        <strong>Storage area:</strong>
         <%= @offer.storage_area %> kvm
       </p>
 
-      <h2>Övrigt</h2>
+      <h2>Misc</h2>
       <p>
-        <strong>Pianoflytt:</strong>
+        <strong>Moving Piano?:</strong>
         <%= human_boolean(@offer.piano) %> <br />
-        <strong>Packhjälp:</strong>
+        <strong>Help to pack?:</strong>
         <%= human_boolean(@offer.help) %>
       </p>
     </div>
     <div class="column">
       <p class="priceinfo">
-        <strong>Uppskattad pris:</strong><br />
-        <i class="price"><%= number_with_delimiter(@offer.price, delimiter: " ") %> inkl moms</i>
+        <strong>Estimated price:</strong><br />
+        <i class="price"><%= number_with_delimiter(@offer.price, delimiter: " ") %> incl vat</i>
       </p>
       <p>
-        Vi sparar ditt prisförslag i 90 dagar.<br />
-        För att se prisförslaget igen, besök:<br/>
+        We save your price for 90 days<br />
+        To see the price estimation again, visit:<br/>
         <a href="http://moveit.se/offert/<%=@offer.id%>">http://moveit.se/offert/<%=@offer.id%></a>
       </p>
       <p>
-        Om du har frågor, kontakta flytt@moveit.se
+        If you have any questions, contact flytt@moveit.se
       </p>
     </div>
   </div>
   <div class="ui section divider"></div>
   <div class="row">
     <div class="column">
-      <%= link_to 'Tillbaka', root_path, class: 'ui blue button' %>
+      <%= link_to 'Back', root_path, class: 'ui blue button' %>
     </div>
   </div>
 </div>
